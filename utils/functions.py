@@ -53,11 +53,15 @@ def show_info(information):
             info['from'] = 'Счет **' + info.get('from')[-4:]
         else:
             info['from'] = info.get('from')[:-10] + '******' + info.get('from')[-4:]
+            info['from'] = info['from'][:-12] + ' ' + info['from'][-12:-8] + ' ' \
+                           + info['from'][-8:-4] + ' ' + info['from'][-4:]
 
         if info.get('to')[:4] == 'Счет':
             info['to'] = 'Счет **' + info.get('to')[-4:]
         else:
             info['to'] = info.get('to')[:-10] + '******' + info.get('to')[-4:]
+            info['to'] = info['to'][:-12] + ' ' + info['to'][-12:-8] + ' ' \
+                           + info['to'][-8:-4] + ' ' + info['to'][-4:]
 
         date = info['date']
 
